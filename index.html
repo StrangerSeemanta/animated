@@ -1,0 +1,72 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kitty Running In Jungle Website">
+<link rel="stylesheet" href="style.css">
+  <title>3d website</title>
+</head>
+
+<body contextmenu="hide">
+
+
+
+  <div id="set-height"></div>
+  <div class="main-container">
+    <video muted id="v0" tabindex="0" preload="metadata">
+      <source type="video/mp4;" src="components/bgAnime.mov">
+      </source>
+    </video>
+  </div>
+  
+  <div id="c1" class="content-card c1">
+    <div class="card">Card 1</div>
+  </div>
+  <div id="c2" class="content-card c2">
+    <div class="card">card 2</div>
+  </div>
+  <div id="c3" class="content-card c3">
+    <div class="card">card 3</div>
+  </div>
+  <div id="c4" class="content-card c4">
+    <div class="card">card 4</div>
+  </div>
+
+  <audio preload="metadata" id="sfx-bg" loop>
+    <source src="components/sfx.mp3" type="audio/mpeg">
+  </audio>
+  <button id="bg-player" style="display: none;"></button>
+
+  
+
+  <div class="mute-btn-container">
+    <button id="muteBtn" class="mute-btn">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <!-- Add more spans for additional bars -->
+    </button>
+  </div>
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo.png">
+      
+    </div>
+    <div class="intro-container">
+    <p class="intro-text">Scroll To Explore</p>
+    <div class="explore-btn" id="explore-btn"></div>
+  </div>
+
+  <div id="endScreen" class="ending-screen">
+    <h1 style="color: white;">Thanks For Visiting Our Website</h1>
+    <button class="exp-again" onclick="location.reload()">Explore Again</button>
+  </div>
+</body>
+
+
+
+<script src="main.js"></script>
+
+</html>
