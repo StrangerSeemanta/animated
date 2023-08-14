@@ -8,11 +8,121 @@
 <link rel="stylesheet" href="style.css">
   <title>3d website</title>
 </head>
+<style>
+/* Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgb(10, 159, 192), rgb(15, 98, 152));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+#ring
+{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:150px;
+  height:150px;
+  background:transparent;
+  border:3px solid #3c3c3c;
+  border-radius:50%;
+  text-align:center;
+  line-height:150px;
+  font-size:20px;
+  color:#fff;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  text-shadow:0 0 10px #fff;
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+#ring:before
+{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid #fff;
+  border-right:3px solid #fff;
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+#rspan
+{
+  display:block;
+  position:absolute;
+  top:calc(50% - 2px);
+  left:50%;
+  width:50%;
+  height:4px;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+#rspan:before
+{
+  content:'';
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#fff;
+  top:-6px;
+  right:-8px;
+  box-shadow:0 0 20px #fff;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
+
+.preloader h1{
+  color: rgb(240, 203, 199);
+  letter-spacing: 1.3px;
+  font-family: 'Dasher Deer',serif;
+}section#mainContainer{
+  display: none;
+}
+
+</style>
 
 <body contextmenu="hide">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div id="ring">Loading
+      <span id="rspan"></span>
+    </div>  </div>
 
-
-
+<section id="mainContainer">
+  <!-- Main Part. {Tweak At Your Own Risk} -->
   <div id="set-height"></div>
   <div class="main-container">
     <video muted id="v0" tabindex="0" preload="metadata">
@@ -22,18 +132,32 @@
   </div>
   
   <div id="c1" class="content-card c1">
-    <div class="card">Card 1</div>
+    <div class="card">
+      <!-- Put Your Card 1 Content Here-->
+      <p>Card 1</p>
+    </div>
   </div>
   <div id="c2" class="content-card c2">
-    <div class="card">card 2</div>
+    <div class="card">
+      <!-- Put Your Card 2 Content Here-->
+
+      <p>card 2</p>
+    </div>
   </div>
   <div id="c3" class="content-card c3">
-    <div class="card">card 3</div>
+    <div class="card">
+      <!-- Put Your Card 3 Content Here -->
+      <p>card 3</p>
+    </div>
   </div>
   <div id="c4" class="content-card c4">
-    <div class="card">card 4</div>
+    <div class="card">
+      <!-- Put Your Card 4 content Here -->
+      <p>card 4</p>
+    </div>
   </div>
 
+  <!-- BGM -->
   <audio preload="metadata" id="sfx-bg" loop>
     <source src="components/sfx.mp3" type="audio/mpeg">
   </audio>
@@ -47,7 +171,6 @@
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-      <!-- Add more spans for additional bars -->
     </button>
   </div>
     <div class="logo">
@@ -55,18 +178,45 @@
       
     </div>
     <div class="intro-container">
-    <p class="intro-text">Scroll To Explore</p>
-    <div class="explore-btn" id="explore-btn"></div>
+      <div class="intro-text " >
+        <p class="">Scroll To Explore ... </p>
+      </div>      
+      <div class="explore-btn" id="explore-btn"></div>
   </div>
 
   <div id="endScreen" class="ending-screen">
     <h1 style="color: white;">Thanks For Visiting Our Website</h1>
-    <button class="exp-again" onclick="location.reload()">Explore Again</button>
+    <div class="explore-btn" title="Explore Again" onclick="location.reload()"></div>
   </div>
+</section>
 </body>
 
 
 
 <script src="main.js"></script>
+<script>
+  window.addEventListener('load',function(){
+    const introText = document.querySelector('.intro-text');
+    
+  
+    const preloader = document.querySelector('.preloader');
+    const content = document.querySelector('section#mainContainer');
+  
+    setTimeout(function() {
+      preloader.style.display = 'none';
+      content.style.display = 'block';
+      TypwriterAnimation(introText);
+    introText.addEventListener('mouseleave',function(){TypwriterAnimation(introText)})
+      }, 2000); // Adjust the delay as needed
+    })
 
+  function TypwriterAnimation(element){
+    if(!element.classList.contains('typewriter')){
+      element.classList.toggle('typewriter');
+      setTimeout(() => {
+      element.classList.toggle('typewriter')
+    }, 3500);
+    }
+  }
+</script>
 </html>

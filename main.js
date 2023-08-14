@@ -1,3 +1,4 @@
+// Tweak At Your Own Risk. 
 class DisableInspection{
   constructor(){
     this.disable = this.disable;
