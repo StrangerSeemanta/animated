@@ -111,11 +111,56 @@
 }section#mainContainer{
   display: none;
 }
+.contact {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background:linear-gradient(rgb(10, 159, 192), rgb(15, 98, 152));
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 1111111111;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .contact .aHolder {
+        width: 100%;
+        height: 100%;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .contact .aHolder strong{
+      font-family: serif;
+      color: rgb(166, 230, 197);
+    }
+    .contact .aHolder a{
+      color: yellow;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .contact .aHolder a:hover {
+        color: #f5eae7;
+    }
 
 </style>
 
 <body contextmenu="hide">
   <!-- Preloader -->
+  <div class="contact">
+   <div class="aHolder">
+    <strong>This Page will available for only 30mins. Mail Me to start conversation</strong>
+     <a href="mailto:ssworkmail22@gmail.com">Contact Me</a></div>
+    
+  </div>
   <div class="preloader">
     <div id="ring">Loading
       <span id="rspan"></span>
@@ -202,12 +247,12 @@
     const preloader = document.querySelector('.preloader');
     const content = document.querySelector('section#mainContainer');
   
-    setTimeout(function() {
-      preloader.style.display = 'none';
-      content.style.display = 'block';
-      TypwriterAnimation(introText);
-    introText.addEventListener('mouseleave',function(){TypwriterAnimation(introText)})
-      }, 2000); // Adjust the delay as needed
+    // setTimeout(function() {
+    //   preloader.style.display = 'none';
+    //   content.style.display = 'block';
+    //   TypwriterAnimation(introText);
+    // introText.addEventListener('mouseleave',function(){TypwriterAnimation(introText)})
+    //   }, 2000); // Adjust the delay as needed
     })
 
   function TypwriterAnimation(element){
