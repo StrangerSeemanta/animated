@@ -17,7 +17,7 @@ class DisableInspection{
     })
   }
 }
-// const restriction = new DisableInspection();
+const restriction = new DisableInspection();
 const exploreBtn = document.getElementById('explore-btn');
  exploreBtn.addEventListener('click',function(){
   this.parentElement.style.transform='translateX(5000px)';
