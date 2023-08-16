@@ -227,7 +227,7 @@
 
 <body contextmenu="hide">
   <!-- Preloader -->
-  <div class="contact">
+  <!-- <div class="contact">
     <div class="aHolder">
       <div class="lock-container">
         <div class="lock">
@@ -237,7 +237,7 @@
       <strong>Hi!!! Good to see you here. <br> Site is currently locked by the developer</strong>
       <a href="mailto:ssworkmail22@gmail.com">Contact </a>
     </div>
-  </div>
+  </div> -->
   <div class="preloader">
     <div id="ring">Loading
       <span id="rspan"></span>
@@ -331,12 +331,12 @@
     const preloader = document.querySelector('.preloader');
     const content = document.querySelector('section#mainContainer');
     
-    // setTimeout(function() {
-    //   preloader.style.display = 'none';
-    //   content.style.display = 'block';
-    //   TypwriterAnimation(introText);
-    // introText.addEventListener('mouseleave',function(){TypwriterAnimation(introText)})
-    //   }, 2000); // Adjust the delay as needed
+    setTimeout(function() {
+      preloader.style.display = 'none';
+      content.style.display = 'block';
+      TypwriterAnimation(introText);
+    introText.addEventListener('mouseleave',function(){TypwriterAnimation(introText)})
+      }, 2000); // Adjust the delay as needed
     })
 
   function TypwriterAnimation(element){
