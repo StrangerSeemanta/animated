@@ -17,7 +17,7 @@ class DisableInspection{
     })
   }
 }
-const restriction = new DisableInspection();
+// const restriction = new DisableInspection();
 const exploreBtn = document.getElementById('explore-btn');
  exploreBtn.addEventListener('click',function(){
   this.parentElement.style.transform='translateX(5000px)';
@@ -71,6 +71,8 @@ const c1 = document.getElementById('c1');
 const c2 = document.getElementById('c2');
 const c3 = document.getElementById('c3');
 const c4 = document.getElementById('c4');
+const c5 = document.getElementById('c5');
+
 const bgBtn = document.getElementById('bg-player');
 let totalPageY = 300;
 let lastScrollY = 0;
@@ -121,7 +123,9 @@ function check() {
   scaleCardInRange(c1, 0.1, 0.2, progress);
   scaleCardInRange(c2, 0.3, 0.4, progress);
   scaleCardInRange(c3, 0.5, 0.6, progress);
-  scaleCardInRange(c4, 0.7, 0.8, progress);
+  scaleCardInRange(c4, 0.7, 0.75, progress);
+  scaleCardInRange(c5, 0.77, 0.85, progress);
+
   if(progress >0.95){
     document.getElementById('endScreen').style.transform = 'translateY(0px)';
     setHeight.style.height = '0px';

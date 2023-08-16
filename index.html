@@ -155,13 +155,7 @@
 
 <body contextmenu="hide">
   <!-- Preloader -->
-  <!-- <div class="contact">
-   <div class="aHolder">
-    <strong>This Page will available for only 30mins. Mail Me to start conversation</strong>
-     <a href="mailto:ssworkmail22@gmail.com">Contact Me</a>
-    <a href="#">ssworkmail22@gmail.com</a></div>
-    
-  </div> -->
+  
   <div class="preloader">
     <div id="ring">Loading
       <span id="rspan"></span>
@@ -180,26 +174,33 @@
   <div id="c1" class="content-card c1">
     <div class="card">
       <!-- Put Your Card 1 Content Here-->
-      <p>Card 1</p>
+      <p>About US</p>
     </div>
   </div>
   <div id="c2" class="content-card c2">
     <div class="card">
       <!-- Put Your Card 2 Content Here-->
 
-      <p>card 2</p>
+      <p>Reveiws</p>
     </div>
   </div>
   <div id="c3" class="content-card c3">
     <div class="card">
       <!-- Put Your Card 3 Content Here -->
-      <p>card 3</p>
+      <p>Photo Gallery</p>
     </div>
   </div>
   <div id="c4" class="content-card c4">
     <div class="card">
       <!-- Put Your Card 4 content Here -->
-      <p>card 4</p>
+      <p>FAQ</p>
+    </div>
+  </div>
+
+  <div id="c5" class="content-card c5">
+    <div class="card">
+      <!-- Put Your Card 4 content Here -->
+      <p>Contact Form</p>
     </div>
   </div>
 
@@ -248,12 +249,12 @@
     const preloader = document.querySelector('.preloader');
     const content = document.querySelector('section#mainContainer');
   
-    // setTimeout(function() {
-    //   preloader.style.display = 'none';
-    //   content.style.display = 'block';
-    //   TypwriterAnimation(introText);
-    // introText.addEventListener('mouseleave',function(){TypwriterAnimation(introText)})
-    //   }, 2000); // Adjust the delay as needed
+    setTimeout(function() {
+      preloader.style.display = 'none';
+      content.style.display = 'block';
+      TypwriterAnimation(introText);
+    introText.addEventListener('mouseleave',function(){TypwriterAnimation(introText)})
+      }, 2000); // Adjust the delay as needed
     })
 
   function TypwriterAnimation(element){

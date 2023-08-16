@@ -83,7 +83,8 @@ html {
   text-align: center;
 }
 .content-card.c1,
-.content-card.c3 {
+.content-card.c3,
+.content-card.c5 {
   left: 5%;
 }
 .content-card.c2,
