@@ -39,7 +39,7 @@ html {
 }
 #set-height {
   display: block;
-  background: black;
+  background: transparent;
 }
 
 .main-container {
